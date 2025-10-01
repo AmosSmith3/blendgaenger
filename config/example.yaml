@@ -1,0 +1,44 @@
+general:
+  iterations: 1 #number of different scenes to generate
+  dae_output: False #export .dae file
+  continuous_play: False #continuously play through iterations without user input (for demo purposes)
+landscape:
+  size: 20 #side length of square landscape area (m)
+  noise_chance: 30 #percent chance for marine snow-like noise
+  boulder_chance: 50 #percent chance for boulders
+  alpha_min: 0.25 #min alpha of landscape material
+  alpha_max: 0.30 #max alpha of landscape material
+boulders:
+  density: 1 # density of boulders (1=sparse, 2=default, 3=dense)
+  max_dist: 5 # max distance (in meters) from sensor trajectory to keep boulders
+  alpha_min: 0.28 #min alpha of boulders material
+  alpha_max: 0.35 #max alpha of boulders material
+munitions:
+  generate: True #whether to generate munitions or not
+  munition_type: "500lbs" #type of munition to generate, options: "500lbs", "artillery_deformed", "artillery_shell_big", "mine", "mortar_shell_small"
+  min_distance: 3 #min distance between munitions
+  num_instances: 3 #number of munitions to try to create
+  alpha_min: 0.35 #min alpha of munitions material
+  alpha_max: 0.55 #max alpha of munitions material
+  save_bb_info: False #save bounding box info of munitions
+sensor_trajectory:
+  size: 15 #approx. length of sensor trajectory (m), should be < landscape size
+  height_min: 4 #min height of sensor above seafloor (m)
+  height_max: 7 #max height of sensor above seafloor (m)
+  bend_radius_min: 10 #min bend radius of sensor trajectory (m)
+  bend_radius_max: 20 #max bend radius of sensor trajectory (m)
+  bend_occ_min: 1 #min number of bends in sensor trajectory
+  bend_occ_max: 3 #max number of bends in sensor trajectory
+  trajectory_deviation_param: 0 #Sensor trajectory deviation, 0=none, 1=low, 2=high
+sonar:
+  generate: False #whether to generate sonar data or not
+  save_csv: False #save sonar data into csv file
+  fov: 90 #downwards field of view (deg)
+  resolution: 0.35 #distance between scan lines (deg)
+  noise_mean: 0.0 #mean noise (m)
+  noise_std: 0.05 #standard deviation of noise (m)
+  interference_noise: True #add interference noise
+  interference_noise_chance_per_ping: 0.3 #chance of interference noise to be applied to ping
+  interference_noise_min: 2.5 #min interference noise (m)
+  interference_noise_max: 10.0 #max interference noise (m)
+  interference_noise_chance_per_beam: 0.6 #chance of dropout per beam
